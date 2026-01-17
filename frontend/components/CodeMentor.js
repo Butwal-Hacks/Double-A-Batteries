@@ -153,9 +153,19 @@ print(fibonacci(5))`;
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900' : 'bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50'} p-4 sm:p-6 transition-colors`}>
       <div className="max-w-7xl mx-auto">
+        {/* hero section with tagline */}
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className={`text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-[#e55753]' : 'text-black'}`}>
+            Code that finally makes sense
+          </h1>
+          <p className={`text-lg sm:text-xl ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+            Understand any code snippet with AI-powered explanations
+          </p>
+        </div>
+
         {/* top buttons */}
-        <div className="flex justify-between items-center mb-8 sm:mb-12 flex-wrap gap-4">
-          <div className="text-center flex-1 hidden sm:block"></div>
+        <div className="flex justify-between items-center mb-4 sm:mb-6 flex-wrap gap-4">
+          <div className="flex-1"></div>
           <div className="flex gap-2 flex-wrap justify-center sm:justify-end">
             <button onClick={() => setDemoMode(!demoMode)} className={`p-3 rounded-lg transition-colors ${demoMode ? 'bg-yellow-100 hover:bg-yellow-200 text-yellow-700' : theme === 'dark' ? 'bg-gray-800 hover:bg-gray-700 text-gray-300' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}`} title={demoMode ? 'Demo mode ON' : 'Demo mode OFF'}>
               <Zap className="w-5 h-5" />
@@ -182,7 +192,7 @@ print(fibonacci(5))`;
                 <Code2 className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1 min-w-[200px]">
-                <h2 className={`text-xl sm:text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>Your Code</h2>
+                <h2 className={`text-xl sm:text-2xl font-bold ${theme === 'dark' ? 'text-[#e55753]' : 'text-gray-800'}`}>Your Code</h2>
                 <p className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>Paste any code snippet here</p>
               </div>
             </div>
@@ -211,12 +221,12 @@ print(fibonacci(5))`;
               </label>
             </div>
             {/* textarea */}
-            <textarea value={code} onChange={(e) => setCode(e.target.value)} placeholder="def hello():&#10;    print('Hello, World!')&#10;&#10;hello()" className={`w-full h-48 sm:h-64 p-4 sm:p-5 border-2 rounded-2xl focus:border-indigo-500 focus:outline-none font-mono text-xs sm:text-sm resize-none transition-all ${theme === 'dark' ? 'bg-gray-900 border-gray-700 text-white' : 'bg-gradient-to-br from-gray-50 to-gray-100 border-indigo-200'}`} />
+            <textarea value={code} onChange={(e) => setCode(e.target.value)} placeholder="def hello():&#10;    print('Hello, World!')&#10;&#10;hello()" className={`w-full h-48 sm:h-64 p-4 sm:p-5 border-2 rounded-2xl focus:border-indigo-500 focus:outline-none font-mono text-xs sm:text-sm resize-none transition-all ${theme === 'dark' ? 'bg-gray-900 border-gray-700 text-[#e55753]' : 'bg-gradient-to-br from-gray-50 to-gray-100 border-indigo-200'}`} />
 
             {/* buttons */}
             <div className="flex gap-2 sm:gap-3 mt-4 sm:mt-6 flex-wrap">
-              <button onClick={handleExplain} disabled={loading || !code.trim()} className="flex-1 min-w-[150px] bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-2xl font-bold hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm sm:text-base">
-                {loading ? (<><Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" /><span className="hidden sm:inline">Analyzing...</span></>) : (<><Sparkles className="w-5 h-5 sm:w-6 sm:h-6" /><span className="hidden sm:inline">Explain (Ctrl+Enter)</span><span className="sm:hidden">Explain</span></>)}
+              <button onClick={handleExplain} disabled={loading || !code.trim()} className="flex-1 min-w-[150px] bg-indigo-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-2xl font-bold hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm sm:text-base">
+                {loading ? (<><Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" /><span className="hidden sm:inline">Analyzing...</span></>) : (<><Sparkles className="w-5 h-5 sm:w-6 sm:h-6" /><span>Explain</span></>)}
               </button>
               <button onClick={loadExample} className={`px-4 sm:px-6 py-3 sm:py-4 rounded-2xl font-bold transition-all text-sm sm:text-base whitespace-nowrap ${theme === 'dark' ? 'bg-purple-900 hover:bg-purple-800 text-purple-100' : 'bg-purple-100 hover:bg-purple-200 text-purple-700'}`}>
                 Try Example
@@ -228,10 +238,10 @@ print(fibonacci(5))`;
           <div className={`${theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-gray-100 border-pink-100'} rounded-3xl shadow-2xl p-6 sm:p-8 border-2 hover:shadow-3xl transition-shadow`}>
             <div className="flex items-center gap-3 mb-6 flex-wrap">
               <div className="bg-gradient-to-br from-pink-600 to-rose-600 p-3 rounded-2xl">
-                <Lightbulb className="w-6 h-6 text-white" />
+                <Lightbulb className="w-6 h-6 text-yellow-300" />
               </div>
               <div className="flex-1 min-w-[150px]">
-                <h2 className={`text-xl sm:text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>Explanation</h2>
+                <h2 className={`text-xl sm:text-2xl font-bold ${theme === 'dark' ? 'text-[#e55753]' : 'text-gray-800'}`}>Explanation</h2>
                 <p className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>AI-powered learning guide</p>
               </div>
               {explanation && (

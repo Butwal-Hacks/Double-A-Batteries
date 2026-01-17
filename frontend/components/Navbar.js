@@ -5,18 +5,25 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { getUser, logout } from '@/lib/auth';
 import { LogOut } from 'lucide-react';
 import { storage } from '@/lib/storage';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [user, setUser] = useState(null);
   const [mounted, setMounted] = useState(false); // hydration fix
   const [theme, setTheme] = useState('light');
   const router = useRouter();
 
   useEffect(() => {
+    // hide navbar on login and signup pages
+    if (pathname === '/login' || pathname === '/signup') {
+      setMounted(false);
+      return;
+    }
+
     setMounted(true);
     setUser(getUser());
     // get theme from storage
@@ -31,7 +38,7 @@ export default function Navbar() {
     }
     window.addEventListener('themeChange', handleThemeChange);
     return () => window.removeEventListener('themeChange', handleThemeChange);
-  }, []);
+  }, [pathname]);
 
   function toggleTheme() {
     const newTheme = storage.toggleTheme();
@@ -56,9 +63,9 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-4 flex-wrap justify-center">
+          <span className={`text-xs sm:text-sm font-medium whitespace-nowrap ${theme === 'dark' ? 'text-[#e55753]' : 'text-gray-700'}`}>Welcome, <span className="font-semibold">Aarambha Gautam</span></span>
           {user ? (
             <>
-              <span className={`text-xs sm:text-sm font-medium whitespace-nowrap ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Welcome, <span className="font-semibold hidden sm:inline">{user.name}</span></span>
               <button onClick={handleLogout} className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-lg transition-all text-xs sm:text-base ${theme === 'dark' ? 'bg-red-900 hover:bg-red-800 text-red-200' : 'bg-red-100 hover:bg-red-200 text-red-700'}`}>
                 <LogOut className="w-4 h-4" /><span className="hidden sm:inline">Logout</span>
               </button>

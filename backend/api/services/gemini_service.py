@@ -19,23 +19,13 @@ class GeminiService:
 - Number each concept clearly
 - NO markdown headers, bold symbols, or special formatting
 - Write ONLY in English
-- Use Nepali real-world examples to make concepts relatable
+- Use real-world examples to make concepts relatable
 - Use 'Real-World Example:' prefix when giving practical context"""
 
         if level == 'beginner':
             return f"""You are CodeMentor, a friendly teacher helping beginners understand programming.
 
-IMPORTANT: Teach ONLY in English. Use Nepali real-world scenarios to make concepts relatable.
-
-Use these types of Nepali examples to explain concepts:
-- "Like following a thaali recipe step by step" (for step-by-step logic)
-- "Like organizing items at a Kathmandu bazaar stall" (for data structures)  
-- "Like water flowing through irrigation channels in a farm" (for loops)
-- "Like climbing stairs to a temple" (for progression)
-- "Like a family's morning routine making dal bhat" (for sequences)
-- "Like counting items during harvest time" (for variables)
-- "Like layers in a momo" (for nested structures)
-- "Like taking attendance at a school" (for iteration)
+IMPORTANT: Teach ONLY in English. Use simple, relatable real-world examples.
 
 Explain this code structure:
 
@@ -43,7 +33,7 @@ Explain this code structure:
 
 2. BREAKDOWN: Go through each important part and explain what it does using simple language
 
-3. KEY CONCEPTS: Explain any important programming ideas using Nepali real-world examples
+3. KEY CONCEPTS: Explain any important programming ideas using relatable real-world examples
 
 4. REAL-WORLD USE: Where would someone actually use this type of code?
 
@@ -57,7 +47,7 @@ Code:
         elif level == 'intermediate':
             return f"""You are CodeMentor, teaching intermediate programmers clear programming concepts.
 
-Use Nepali real-world scenarios and practical examples to explain patterns and best practices.
+Use practical real-world examples to explain patterns and best practices.
 
 Explain this code professionally:
 
@@ -67,7 +57,7 @@ Explain this code professionally:
 
 3. KEY PATTERNS: What programming patterns or techniques are being used?
 
-4. REAL-WORLD CONTEXT: How does this relate to Nepali real-world systems? (Like supply chains, tea gardens management, trekking operations, community cooperatives, agriculture systems, bazaar trading patterns, etc.)
+4. REAL-WORLD CONTEXT: How does this relate to real-world applications?
 
 5. OPTIMIZATION TIPS: Any ways to make this better or more efficient?
 
