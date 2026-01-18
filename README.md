@@ -1,6 +1,6 @@
 # 🚀 CodeMentor
 
-> **Your personal AI-powered code explanation companion** — Understand any code snippet in seconds with AI-generated explanations, visual diagrams, and smart suggestions.
+> **Your personal AI-powered code explanation companion** — Understand any code snippet in seconds with AI-generated explanations in Nepali for beginner coders.
 
 [![Django](https://img.shields.io/badge/Django-5.0-darkgreen.svg)](https://www.djangoproject.com/)
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
@@ -11,8 +11,7 @@
 
 ## ✨ Features
 
-- **🤖 AI Code Explanation** — Paste any code snippet and get instant, easy-to-understand explanations powered by Google's Gemini AI
-- **📊 Visual Diagrams** — Auto-generated ASCII diagrams to help visualize code logic and structure
+- **🤖 AI Code Explanation** — Paste any code snippet and get instant, easy-to-understand explanations powered by Google's Gemini AI with Nepali references
 - **💡 Smart Suggestions** — Get improvement recommendations for your code
 - **🎨 Code Syntax Highlighting** — Beautiful syntax highlighting with support for 50+ programming languages
 - **📁 History Tracking** — Keep track of all your code explanations with searchable history
@@ -185,7 +184,7 @@ butwalhacks/
 1. **Paste Your Code** — Copy any code snippet into the editor
 2. **Select Language** — Choose the programming language (or auto-detect)
 3. **Click Explain** — Submit for AI analysis
-4. **Review Results** — Get explanation, diagram, and suggestions
+4. **Review Results** — Get explanation with Nepali references and suggestions
 5. **Export or Share** — Download as PDF or share the link
 6. **Save to History** — All explanations are automatically saved
 
@@ -242,15 +241,10 @@ GEMINI_API_KEY=your_gemini_api_key_here
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 👨‍💻 Authors
 
-Built with ❤️ at ButwalHacks
+Aarambha Gautam
+Anjana Aryal
 
 ---
 
